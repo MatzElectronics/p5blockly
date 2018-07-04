@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="application-name" content="p5blockly"/>
+
+        <title>p5blockly</title>
+
+        <!-- JavaScript libraries -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- Blockly core -->
+        <script type="text/javascript" src="https://blockly-demo.appspot.com/static/blockly_compressed.js"></script>
+
+        <!-- Internationalization text strings -->
+        <script type="text/javascript" src="messages.js"></script>
+
+        <!-- Block definitions -->
+        <script type="text/javascript" src="blocks.js"></script>
+
+        <!-- Style sheets/fonts -->
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu|Rambla|Basic|Oxygen|Rubik|Nunito+Sans|Varela+Round|Puritan|Signika|Magra|Archivo|Itim|Neucha|Lato|Share+Tech|PT+Sans|Heebo|Cabin|ABeeZee|Arimo|Encode+Sans+Semi+Condensed|Exo+2|Open+Sans">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/p5.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.dom.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.sound.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+
+        <script>
+            function loadToolbox(xmlText) {
+                var xmlDom = Blockly.Xml.textToDom(xmlText);
+                Blockly.Xml.domToWorkspace(xmlDom, Blockly.mainWorkspace);
+            }
+
+            $(document).ready(function() {
+                Blockly.inject('blockEditor');
+            });
+        </script>
+    </head>
+    
+    <body>
+        This is a thingy:<br><br>
+        <div id="blockEditor"></div>
+        
+        <script>
+            function setup() { 
+                createCanvas(400, 400);
+            } 
+
+            function draw() { 
+                background(220);
+                ellipse(50,50,50,50);
+            }
+        </script>
+    </body>
+</html>
