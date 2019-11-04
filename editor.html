@@ -46,22 +46,30 @@
     
     <body>
         This is a thingy:<br><br>
-        <div id="blockEditor" style="height: 480px; width: 600px;"></div>
+        <div id="blockEditor" style="height: 480px; width: 600px; float:left"></div>
+        <div id="outPutCanvas" style="height:480px; width:480px;></div>
         
-        <script>
-            /*
+        <div id="generatedCode" style="display:none;">
+            
             function setup() { 
                 createCanvas(400, 400);
+                canvas.parent('outPutCanvas');
             } 
 
             function draw() { 
                 background(220);
             }
-            */
-        </script>
+            
+        </div>
+                                      
+        <button onclick="eval(document.getElementById('generatedCode').innerHTML)">Run It!</button>
         
         <xml id="toolbox" style="display: none">
             <block type="shape_ellipse"></block>
         </xml>
+                                       
+        <script>
+                                     
+        </script>
     </body>
 </html>
